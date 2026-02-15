@@ -18,7 +18,7 @@ export default function Carrossel() {
   }, []);
 
   return (
-    <div className="w-full bg-gray-100">
+    <div className="w-full">
       <div className="relative w-full h-[450px] max-md:h-[260px] overflow-hidden">
 
         {images.map((img, index) => (
