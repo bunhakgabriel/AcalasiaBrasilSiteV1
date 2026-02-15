@@ -1,10 +1,22 @@
 import { useEffect, useState, type JSX } from "react";
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 import { MdOutlineMail } from "react-icons/md";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Menu(): JSX.Element {
     const [scrolled, setScrolled] = useState<boolean>(false);
     const [mobileOpen, setMobileOpen] = useState<boolean>(false);
+
+    const path = useLocation().pathname;
+    const navigate = useNavigate();
+
+    function navigateTo(path: string, mobile?: boolean): void {
+        navigate(path);
+
+        if(mobile){
+            setMobileOpen(false);
+        }
+    }
 
     useEffect((): (() => void) => {
         const onScroll = (): void => {
@@ -47,11 +59,11 @@ export default function Menu(): JSX.Element {
 
                     {/* Desktop navigation */}
                     <nav className="hidden md:flex items-center gap-8 text-gray-600 font-medium">
-                        <MenuItem active>HOME</MenuItem>
-                        <MenuItem>O GRUPO</MenuItem>
-                        <MenuItem>EQUIPE</MenuItem>
-                        <MenuItem>GALERIA</MenuItem>
-                        <MenuItem>CONTATO</MenuItem>
+                        <MenuItem onClick={() => navigateTo("/")} active={path == "/"}>HOME</MenuItem>
+                        <MenuItem onClick={() => navigateTo("/quem_somos")} active={path == "/quem_somos"}>O GRUPO</MenuItem>
+                        <MenuItem onClick={() => navigateTo("/equipe")} active={path == "/equipe"}>EQUIPE</MenuItem>
+                        <MenuItem onClick={() => navigateTo("/portifolio")} active={path == "/portifolio"}>GALERIA</MenuItem>
+                        <MenuItem onClick={() => navigateTo("/contato")} active={path == "/contato"}>CONTATO</MenuItem>
                     </nav>
 
                     {/* Mobile hamburger */}
@@ -70,24 +82,24 @@ export default function Menu(): JSX.Element {
             {/* Mobile menu */}
             <div
                 className={`md:hidden bg-white shadow-lg transition-all duration-300 ease-in-out ${mobileOpen
-                        ? "opacity-100 translate-y-0"
-                        : "opacity-0 -translate-y-4 pointer-events-none"
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 -translate-y-4 pointer-events-none"
                     }`}
             >
                 <div className="flex flex-col px-6 py-4 gap-2">
-                    <MobileMenuItem active onClick={() => setMobileOpen(false)}>
+                    <MobileMenuItem active={path == "/"} onClick={() => navigateTo("/", true)}>
                         HOME
                     </MobileMenuItem>
-                    <MobileMenuItem onClick={() => setMobileOpen(false)}>
+                    <MobileMenuItem active={path == "/quem_somos"} onClick={() => navigateTo("/quem_somos", true)}>
                         O GRUPO
                     </MobileMenuItem>
-                    <MobileMenuItem onClick={() => setMobileOpen(false)}>
+                    <MobileMenuItem active={path == "/equipe"} onClick={() => navigateTo("/equipe", true)}>
                         EQUIPE
                     </MobileMenuItem>
-                    <MobileMenuItem onClick={() => setMobileOpen(false)}>
+                    <MobileMenuItem active={path == "/portifolio"} onClick={() => navigateTo("/portifolio", true)}>
                         GALERIA
                     </MobileMenuItem>
-                    <MobileMenuItem onClick={() => setMobileOpen(false)}>
+                    <MobileMenuItem active={path == "/contato"} onClick={() => navigateTo("/contato", true)}>
                         CONTATO
                     </MobileMenuItem>
                 </div>
@@ -103,11 +115,13 @@ export default function Menu(): JSX.Element {
 interface MenuItemProps {
     children: React.ReactNode;
     active?: boolean;
+    onClick?: () => void;
 }
 
-function MenuItem({ children, active = false }: MenuItemProps): JSX.Element {
+function MenuItem({ children, active = false, onClick }: MenuItemProps): JSX.Element {
     return (
         <a
+            onClick={onClick}
             href="#"
             className={`px-4 py-2 rounded-full transition-all duration-300 ${active ? "bg-[#03ABB6] text-white" : "hover:text-[#03ABB6]"
                 }`}
@@ -136,8 +150,8 @@ function MobileMenuItem({
         <button
             onClick={onClick}
             className={`text-left px-4 py-3 rounded-full text-sm transition-all ${active
-                    ? "bg-[#03ABB6] text-white"
-                    : "text-gray-600 hover:text-[#03ABB6]"
+                ? "bg-[#03ABB6] text-white"
+                : "text-gray-600 hover:text-[#03ABB6]"
                 }`}
         >
             {children}
