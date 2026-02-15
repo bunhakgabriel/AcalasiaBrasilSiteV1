@@ -5,10 +5,13 @@ import GaleriaHome from "./componentes/GaleriaHome";
 import { GaleriaHomeSimples } from "./componentes/GaleriaHomeSimples";
 import OQueEAcalasia from "./componentes/OQueEAcalasia";
 import ServicosGrid from "./componentes/ServicosGrid";
-import { SocialSection } from "./componentes/SocialSection";
+import { RedesSociais } from "../../componentes/redes-sociais/RedesSociais";
 import Valores from "./componentes/Valores";
 
 export default function HomeScreen() {
+
+  const titulo = "Acesse nossas Redes Sociais e conheça depoimentos de pacientes atendidos pelo Grupo Acalásia Megaesôfago Brasil:"
+
   return (
     <div>
       <Carrossel />
@@ -19,7 +22,7 @@ export default function HomeScreen() {
       <ChamadaInstitucional />
       <ServicosGrid />
       <GaleriaHome />
-      <SocialSection />
+      <RedesSociais titulo={titulo} />
     </div>
   );
 }

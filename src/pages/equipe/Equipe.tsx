@@ -1,3 +1,5 @@
 export default function Equipe() {
-    return (<>Equipe</>);
+    return (
+        <div></div>
+    );
 }

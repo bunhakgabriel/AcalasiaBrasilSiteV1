@@ -1,9 +1,8 @@
-export function SocialSection() {
+export function RedesSociais({ titulo = "" }: { titulo?: string }) {
     return (
         <section className="py-14 px-4 text-center">
             <p className="text-[#03ABB6] font-semibold mx-auto mb-6 text-xl">
-                Acesse nossas Redes Sociais e conheça depoimentos de pacientes atendidos
-                pelo Grupo Acalásia Megaesôfago Brasil:
+                {titulo}
             </p>
 
             <div className="flex justify-center items-center flex-wrap">

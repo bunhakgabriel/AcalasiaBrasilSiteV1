@@ -2,7 +2,7 @@ import { FaCheck } from "react-icons/fa";
 
 export default function OQueEAcalasia() {
     return (
-        <section className="w-full bg-gray-100 py-16">
+        <section className="w-full py-16">
             <div className="max-w-6xl mx-auto px-6">
 
                 {/* Cabeçalho */}
