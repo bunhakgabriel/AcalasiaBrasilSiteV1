@@ -109,7 +109,7 @@ function MenuItem({ children, active = false }: MenuItemProps): JSX.Element {
     return (
         <a
             href="#"
-            className={`px-4 py-2 rounded-full transition-all duration-300 ${active ? "bg-teal-500 text-white" : "hover:text-teal-500"
+            className={`px-4 py-2 rounded-full transition-all duration-300 ${active ? "bg-[#03ABB6] text-white" : "hover:text-[#03ABB6]"
                 }`}
         >
             {children}
@@ -136,8 +136,8 @@ function MobileMenuItem({
         <button
             onClick={onClick}
             className={`text-left px-4 py-3 rounded-full text-sm transition-all ${active
-                    ? "bg-teal-500 text-white"
-                    : "text-gray-600 hover:text-teal-500"
+                    ? "bg-[#03ABB6] text-white"
+                    : "text-gray-600 hover:text-[#03ABB6]"
                 }`}
         >
             {children}
