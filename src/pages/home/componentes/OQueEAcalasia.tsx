@@ -34,7 +34,7 @@ export default function OQueEAcalasia() {
 
                     {/* Texto (75%) */}
                     <div className="
-            text-gray-700 
+            text-[#525252] 
             text-md
             leading-relaxed 
             md:col-span-7
@@ -85,7 +85,7 @@ export default function OQueEAcalasia() {
                 </div>
 
                 {/* Parte final */}
-                <div className="mt-6 space-y-1 text-gray-800 flex flex-col gap-4 md:gap-2">
+                <div className="mt-6 space-y-1 text-[#525252]  flex flex-col gap-4 md:gap-2">
 
                     <div>
                         <p className="font-semibold">

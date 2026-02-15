@@ -1,6 +1,6 @@
 export default function BemVindo() {
   return (
-    <section className="w-full -mt-6 sm:mt-0 py-0 sm:py-12">
+    <section className="w-full -mt-6 sm:mt-0 pt-0 pb-12 sm:py-12">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Cabeçalho */}
@@ -27,7 +27,7 @@ export default function BemVindo() {
 
         {/* Texto */}
         <div className="
-          text-gray-700 
+          text-[#525252] 
           text-lg 
           leading-relaxed 
           space-y-6
