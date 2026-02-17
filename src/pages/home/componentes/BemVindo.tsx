@@ -9,7 +9,7 @@ export default function BemVindo() {
           <h2 className="
             text-3xl 
             font-semibold 
-            text-teal-600
+            text-[#03ABB6]
             max-md:text-2xl
             max-md:text-center
           ">
