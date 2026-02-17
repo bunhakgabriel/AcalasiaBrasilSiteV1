@@ -2,6 +2,7 @@ import { useEffect, useState, type JSX } from "react";
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 import { MdOutlineMail } from "react-icons/md";
 import { useLocation, useNavigate } from "react-router-dom";
+import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 
 export default function Menu(): JSX.Element {
     const [scrolled, setScrolled] = useState<boolean>(false);
@@ -13,7 +14,7 @@ export default function Menu(): JSX.Element {
     function navigateTo(path: string, mobile?: boolean): void {
         navigate(path);
 
-        if(mobile){
+        if (mobile) {
             setMobileOpen(false);
         }
     }
@@ -48,7 +49,7 @@ export default function Menu(): JSX.Element {
                 className={`bg-white transition-all duration-300 ease-in-out shadow-sm ${scrolled ? "py-4" : "py-2"
                     }`}
             >
-                <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+                <div className="max-w-7xl mx-auto px-6 flex items-center justify-end md:justify-between">
                     {/* Logo */}
                     <img
                         src="/imagens/logo.png"
@@ -69,12 +70,24 @@ export default function Menu(): JSX.Element {
                     {/* Mobile hamburger */}
                     <button
                         aria-label="Abrir menu"
-                        className="md:hidden w-10 h-10 border border-gray-300 rounded-md flex flex-col items-center justify-center gap-1"
                         onClick={() => setMobileOpen((prev) => !prev)}
+                        className="md:hidden w-10 h-10 border border-gray-300 rounded-md 
+               flex items-center justify-center 
+               transition-all duration-300"
                     >
-                        <span className="w-5 h-0.5 bg-gray-600" />
-                        <span className="w-5 h-0.5 bg-gray-600" />
-                        <span className="w-5 h-0.5 bg-gray-600" />
+                        <div className="relative w-6 h-6">
+                            {/* Ícone Menu */}
+                            <HiOutlineMenu
+                                className={`absolute inset-0 w-6 h-6 text-gray-400 transition-all duration-300 
+            ${mobileOpen ? "opacity-0 rotate-90 scale-75" : "opacity-100 rotate-0 scale-100"}`}
+                            />
+
+                            {/* Ícone X */}
+                            <HiOutlineX
+                                className={`absolute inset-0 w-6 h-6 text-gray-400 transition-all duration-300 
+            ${mobileOpen ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-90 scale-75"}`}
+                            />
+                        </div>
                     </button>
                 </div>
             </div>
