@@ -9,7 +9,7 @@ export default function WhatsappButton() {
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed left-4 md:left-10 bottom-4 md:bottom-18 z-50 group flex items-center"
+      className="fixed left-4 md:left-10 bottom-4 md:bottom-12 z-50 group flex items-center"
     >
 
       {/* Botão */}
