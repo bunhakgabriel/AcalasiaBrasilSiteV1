@@ -49,7 +49,7 @@ export default function Menu(): JSX.Element {
                 className={`bg-white transition-all duration-300 ease-in-out shadow-sm ${scrolled ? "py-4" : "py-2"
                     }`}
             >
-                <div className="max-w-7xl mx-auto px-6 flex items-center justify-end md:justify-between">
+                <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
                     {/* Logo */}
                     <img
                         src="/imagens/logo.png"
