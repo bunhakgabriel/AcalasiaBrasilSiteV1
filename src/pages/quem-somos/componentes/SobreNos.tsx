@@ -7,7 +7,7 @@ export default function SobreNos() {
 
                 {/* Cabeçalho */}
                 <div className="flex items-center gap-4 mb-10 max-md:flex-col">
-                    <h2 className="text-3xl font-semibold text-teal-600 max-md:text-center">
+                    <h2 className="text-3xl font-semibold text-[#03ABB6] max-md:text-center">
                         Sobre nós
                     </h2>
 
