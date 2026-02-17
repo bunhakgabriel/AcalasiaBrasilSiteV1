@@ -5,12 +5,12 @@ export default function Juliana() {
 
                 {/* Cabeçalho */}
                 <div className="flex items-center gap-4 mb-10 max-md:flex-col">
-                    <h2 className="text-3xl font-semibold text-teal-600 max-md:text-center">
+                    <h2 className="text-3xl font-semibold text-[#03ABB6] max-md:text-center">
                         Quem somos
                     </h2>
 
                     {/* Linha decorativa (só desktop) */}
-                    <div className="flex-1 h-[1px] bg-teal-200 max-md:hidden" />
+                    <div className="flex-1 mt-1 h-[1px] bg-teal-200 max-md:hidden" />
                 </div>
 
                 {/* Conteúdo principal */}
