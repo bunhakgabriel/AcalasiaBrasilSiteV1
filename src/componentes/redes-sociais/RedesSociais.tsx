@@ -7,7 +7,7 @@ export function RedesSociais({ titulo = "" }: { titulo?: string }) {
 
             <div className="flex justify-center items-center flex-wrap">
                 <div className="w-96 flex justify-center">
-                    <a href="#" aria-label="Facebook">
+                    <a target="_blank" href="https://www.facebook.com/groups/186091785171184" aria-label="Facebook">
                         <img
                             src="/imagens/icone-facebook.png"
                             alt="Facebook"
@@ -17,7 +17,7 @@ export function RedesSociais({ titulo = "" }: { titulo?: string }) {
                 </div>
 
                 <div className="w-96 flex justify-center">
-                    <a href="#" aria-label="Instagram">
+                    <a target="_blank" href="https://www.instagram.com/acalasiabrasil/" aria-label="Instagram">
                         <img
                             src="/imagens/icone-instagram.png"
                             alt="Instagram"
@@ -27,7 +27,7 @@ export function RedesSociais({ titulo = "" }: { titulo?: string }) {
                 </div>
 
                 <div className="w-96 flex justify-center">
-                    <a href="#" aria-label="TikTok">
+                    <a target="_blank" href="https://www.tiktok.com/@acalasiamegaesofago?_t=ZM-8yeoqV0kjVW&_r=1" aria-label="TikTok">
                         <img
                             src="/imagens/icone-tiktok.png"
                             alt="TikTok"

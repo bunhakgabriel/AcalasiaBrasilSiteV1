@@ -1,7 +1,7 @@
 import { FaWhatsapp } from "react-icons/fa";
 
 export default function WhatsappButton() {
-  const numero = "5581992479363"; // coloque seu número com DDI
+  const numero = "558388882363"; // coloque seu número com DDI
   const link = `https://wa.me/${numero}`;
 
   return (
