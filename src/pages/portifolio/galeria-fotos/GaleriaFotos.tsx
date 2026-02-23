@@ -9,7 +9,7 @@ import {
 const images: string[] = [
     "/imagens/carrossel-img-5.jpg",
     "/imagens/galeria-home-2.jpg",
-    "/imagens/galeria-fotos-1.jpg",
+    "/imagens/carrossel-img-1.png",
     "/imagens/galeria-fotos-2.jpg",
     "/imagens/galeria-home-3.jpg",
     "/imagens/galeria-fotos-3.jpg",
