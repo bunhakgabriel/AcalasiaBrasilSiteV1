@@ -104,7 +104,7 @@ export default function OQueEAcalasia() {
                         </p>
 
                         <p>
-                            O grupo @acalasia_megaesofago_brasil existe para acolher,
+                            O grupo @acalasiabrasil existe para acolher,
                             informar e conectar pacientes e profissionais.
                         </p>
                     </div>
