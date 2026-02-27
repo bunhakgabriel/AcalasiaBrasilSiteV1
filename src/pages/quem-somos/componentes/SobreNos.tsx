@@ -20,7 +20,7 @@ export default function SobreNos() {
 
                     {/* Imagem (25%) */}
                     <img
-                        src="/imagens/imagem-equipe.jpg"
+                        src="/imagens/carrossel-img-1.png"
                         alt="Procedimento médico"
                         className="
               w-full 

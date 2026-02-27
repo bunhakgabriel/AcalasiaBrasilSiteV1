@@ -86,7 +86,7 @@ export function NossaEquipe() {
                             Dra. Wilza Diane
                         </h3>
                         <p>
-                            Psicóloga | Apoio emocional especializado para pacientes com distúrbios alimentares funcionais e doenças crônicas
+                            Psicóloga | Acompanhamento psicológico especializado para pacientes com Acalásia, distúrbios alimentares funcionais, doenças crônicas e transtornos de ansiedade.
                         </p>
                     </div>
 

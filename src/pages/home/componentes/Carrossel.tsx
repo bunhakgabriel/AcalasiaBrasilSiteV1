@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 const images = [
   "/imagens/carrossel-img-4.jpg",
+  "/imagens/galeria-home-5.jpg",
   "/imagens/carrossel-img-1.png",
   "/imagens/carrossel-img-2.jpg",
   "/imagens/carrossel-img-3.jpg",

@@ -2,7 +2,7 @@ export function GaleriaHomeSimples() {
   const images = [
     "/imagens/carrossel-img-5.jpg",
     "/imagens/galeria-home-4.jpg",
-    "/imagens/imagem-dois-medicos.jpg",
+    "/imagens/galeria-home-6.jpg",
   ];
 
   return (
