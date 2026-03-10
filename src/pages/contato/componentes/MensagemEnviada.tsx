@@ -1,22 +1,7 @@
 import { Link } from "react-router-dom";
 import { FaCheckCircle } from "react-icons/fa";
-import Countdown from "react-countdown";
 
 function MensagemEnviada() {
-    const renderer = ({ seconds, completed }: { seconds: number; completed: boolean }) => {
-
-        if (completed) {
-            window.location.href = "/";
-            return null;
-        }
-
-        return (
-            <span className="font-semibold text-[#03ABB6]">
-                {seconds} segundos
-            </span>
-        );
-    };
-
     return (
         <section className="h-screen flex items-center justify-center bg-gray-50 px-4 py-10">
 
@@ -36,11 +21,7 @@ function MensagemEnviada() {
                 </p>
 
                 <p className="text-gray-500 mb-8 text-sm sm:text-base">
-                    Você será redirecionado para a página inicial em{" "}
-                    <Countdown
-                        date={Date.now() + 10000}
-                        renderer={renderer}
-                    />
+                    Você será redirecionado para a página inicial em alguns segundos...
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
