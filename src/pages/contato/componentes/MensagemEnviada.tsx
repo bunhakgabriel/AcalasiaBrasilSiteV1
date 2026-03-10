@@ -5,21 +5,31 @@ import { useEffect, useState } from "react";
 function MensagemEnviada() {
 
     const navigate = useNavigate();
-    const [tempo, setTempo] = useState(11);
+    const DURACAO = 12;
+
+    const [tempo, setTempo] = useState(DURACAO);
 
     useEffect(() => {
+
+        const fim = Date.now() + DURACAO * 1000;
+
         const interval = setInterval(() => {
-            setTempo(prev => prev - 1);
-        }, 1000);
+
+            const restante = Math.ceil((fim - Date.now()) / 1000);
+
+            if (restante <= 0) {
+                clearInterval(interval);
+                navigate("/");
+                return;
+            }
+
+            setTempo(restante);
+
+        }, 250);
 
         return () => clearInterval(interval);
-    }, []);
 
-    useEffect(() => {
-        if (tempo <= 0) {
-            navigate("/");
-        }
-    }, [tempo, navigate]);
+    }, [navigate]);
 
     return (
         <section className="h-screen flex items-center justify-center bg-gray-50 px-4 py-10">
@@ -40,8 +50,8 @@ function MensagemEnviada() {
                 </p>
 
                 <p className="text-gray-500 mb-8 text-sm sm:text-base">
-                    Você será redirecionado para a página inicial em{" "}
-                    <span className="font-semibold text-teal-600">{tempo} segundos</span>.
+                    Você será redirecionado para a página inicial em
+                    <span className="font-semibold text-[#03ABB6]"> {tempo} segundos</span>.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
