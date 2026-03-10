@@ -1,5 +1,6 @@
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Contato() {
   const [nome, setNome] = useState("");
@@ -7,6 +8,8 @@ export default function Contato() {
   const [telefone, setTelefone] = useState("");
   const [assunto, setAssunto] = useState("");
   const [mensagem, setMensagem] = useState("");
+
+  const navigate = useNavigate();
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -32,7 +35,7 @@ export default function Contato() {
         "wTmSm77WhPfC9P-xj",
       )
       .then(() => {
-        alert("Mensagem enviada com sucesso, em breve entraremos em contato!");
+        navigate("/mensagem-enviada");
 
         setNome("");
         setEmail("");

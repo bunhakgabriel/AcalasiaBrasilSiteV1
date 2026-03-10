@@ -3,6 +3,7 @@ import Menu from "./componentes/menu/Menu";
 import { Rodape } from "./componentes/rodape/Rodape";
 import { ScrollToTop } from "./componentes/scroll-to-top/ScrollToTop";
 import WhatsappButton from "./componentes/whatsapp-button/WhatsappButton";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <ScrollToTop />
       <Menu />
       <div className="h-[100px] sm:h-[180px] md:h-[200px]"></div>
+      < ToastContainer  /> 
       <Outlet />
       <WhatsappButton />
       <Rodape />
