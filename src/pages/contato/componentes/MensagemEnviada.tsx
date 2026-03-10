@@ -1,35 +1,24 @@
 import { Link, useNavigate } from "react-router-dom";
 import { FaCheckCircle } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import Countdown from "react-countdown";
 
 function MensagemEnviada() {
 
     const navigate = useNavigate();
-    const DURACAO = 12;
 
-    const [tempo, setTempo] = useState(DURACAO);
+    const renderer = ({ seconds, completed }: { seconds: number; completed: boolean }) => {
 
-    useEffect(() => {
+        if (completed) {
+            navigate("/");
+            return null;
+        }
 
-        const fim = Date.now() + DURACAO * 1000;
-
-        const interval = setInterval(() => {
-
-            const restante = Math.ceil((fim - Date.now()) / 1000);
-
-            if (restante <= 0) {
-                clearInterval(interval);
-                navigate("/");
-                return;
-            }
-
-            setTempo(restante);
-
-        }, 250);
-
-        return () => clearInterval(interval);
-
-    }, [navigate]);
+        return (
+            <span className="font-semibold text-[#03ABB6]">
+                {seconds} segundos
+            </span>
+        );
+    };
 
     return (
         <section className="h-screen flex items-center justify-center bg-gray-50 px-4 py-10">
@@ -50,8 +39,11 @@ function MensagemEnviada() {
                 </p>
 
                 <p className="text-gray-500 mb-8 text-sm sm:text-base">
-                    Você será redirecionado para a página inicial em
-                    <span className="font-semibold text-[#03ABB6]"> {tempo} segundos</span>.
+                    Você será redirecionado para a página inicial em{" "}
+                    <Countdown
+                        date={Date.now() + 11000}
+                        renderer={renderer}
+                    />
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
