@@ -9,19 +9,17 @@ function MensagemEnviada() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setTempo((prev) => {
-                if (prev <= 1) {
-                    clearInterval(interval);
-                    navigate("/");
-                    return 0;
-                }
-                return prev - 1;
-            });
+            setTempo(prev => prev - 1);
         }, 1000);
 
         return () => clearInterval(interval);
+    }, []);
 
-    }, [navigate]);
+    useEffect(() => {
+        if (tempo <= 0) {
+            navigate("/");
+        }
+    }, [tempo, navigate]);
 
     return (
         <section className="h-screen flex items-center justify-center bg-gray-50 px-4 py-10">
@@ -42,9 +40,8 @@ function MensagemEnviada() {
                 </p>
 
                 <p className="text-gray-500 mb-8 text-sm sm:text-base">
-                    Você será redirecionado para a página inicial em
-                    <span className="font-semibold text-teal-600"> {tempo} </span>
-                    segundos.
+                    Você será redirecionado para a página inicial em{" "}
+                    <span className="font-semibold text-teal-600">{tempo} segundos</span>.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
