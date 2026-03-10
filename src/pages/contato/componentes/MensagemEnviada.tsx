@@ -41,7 +41,7 @@ function MensagemEnviada() {
                 <p className="text-gray-500 mb-8 text-sm sm:text-base">
                     Você será redirecionado para a página inicial em{" "}
                     <Countdown
-                        date={Date.now() + 11000}
+                        date={Date.now() + 12000}
                         renderer={renderer}
                     />
                 </p>
