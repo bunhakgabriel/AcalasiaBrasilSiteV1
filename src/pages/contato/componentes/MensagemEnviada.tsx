@@ -1,15 +1,12 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaCheckCircle } from "react-icons/fa";
 import Countdown from "react-countdown";
 
 function MensagemEnviada() {
-
-    const navigate = useNavigate();
-
     const renderer = ({ seconds, completed }: { seconds: number; completed: boolean }) => {
 
         if (completed) {
-            navigate("/");
+            window.location.href = "/";
             return null;
         }
 
